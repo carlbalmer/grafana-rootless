@@ -5,8 +5,3 @@ ARG paths='/opt /var/log /etc/collectd /etc/logrotate.d /etc/nginx /etc/redis /e
 RUN touch /run/nginx.pid && \
     chgrp -R 0 ${paths} && \
     chmod -R g=u ${paths}
-
-ARG user=nginx
-RUN adduser $user root
-
-USER $user
